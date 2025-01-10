@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// 获取单个 Pokémon 详情
+
 router.get('/:name', async (req, res) => {
     try {
         const pokemon = await Pokemon.findOne({ name: req.params.name });
@@ -23,7 +23,7 @@ router.get('/:name', async (req, res) => {
     }
 });
 
-// 创建 Pokémon
+
 router.post('/', async (req, res) => {
     try {
         const newPokemon = new Pokemon(req.body);
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// 更新 Pokémon
+
 router.put('/:id', async (req, res) => {
     try {
         const updatedPokemon = await Pokemon.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -45,7 +45,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// 删除 Pokémon
+
 router.delete('/:id', async (req, res) => {
     try {
         const deletedPokemon = await Pokemon.findByIdAndDelete(req.params.id);
